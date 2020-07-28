@@ -1,0 +1,89 @@
+
+.menu {
+    width: 900px;
+    height: 60px;
+    margin:0 auto;
+    background-color: blue;
+}
+.menu ul li {
+    display: inline-block;
+    padding: 5px;
+    margin-top: 10px;
+}
+.menu ul li a {
+    text-decoration: none;
+    color:black;
+    padding: 14px 16px;
+    font-size: 20px;
+
+
+}
+table {
+    margin-top: 80px;
+}
+.menu ul li a:hover {
+    color:red;
+}
+.form1 {
+    width: 700px;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.form1 input[type="text"] {
+    margin-bottom: 15px;
+}
+.atention {
+    width: 200px;
+    height: 200px;
+    float:right;
+}
+.cont {
+    width: 400px;
+    height: 400px;
+    background-color: blueviolet;
+    margin: 0 auto;
+}
+.cont h2 {
+    text-align: center;
+    color:white;
+}
+.cont p, .cont ul li  {
+    text-align:center;
+    list-style-type: none;
+    color:white;
+}
+.atention p a {
+    color:red;
+}
+.a1 {
+    font-size: 20px;
+    color:red;
+    
+}
+.form1 {
+    width: 400px;
+    height: 400px;
+    background-color: brown;
+    margin: 0 auto;
+}
+.form1 h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+.form1 label {
+    margin-left: 50px;
+}
+.form1 input[type=text] {
+    margin-left: 20px;
+}
+.form1 input[type=password] {
+    margin-left: 20px;
+}
+.form1 input[type=submit] {
+    margin-left: 150px;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    cursor: pointer;
+}

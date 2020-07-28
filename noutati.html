@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Concurs de Programare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Concurs de Programare</h1>
+    <div class="atention">
+        <?php session_start(); if(isset($_SESSION['user'])) { echo '<p>Esti conectat '.$_SESSION['user'].'!</p>|<a href="logout.php">Logout</a>'; } else { echo '<p><a href="login.php" style="color: red;">Conecteaza-te!</a></p>'; } ?> 
+      </div>
+<div class="menu">
+
+    <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="regulament.html">Regulament</a></li>
+    <li><a href="organizatori.html">Organizatori</a></li>
+    <li><a href="noutati.html">Noutati</a></li>
+    <li><a href="participanti.html">Participanti</a></li>
+    <li><a href="rezultate.html">Rezultate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<?php if(isset($_SESSION['user'])) { ?>
+<div class="continut">
+    <h2>Anunturi</h2>
+    <form method="POST" action="action_anunturi.php">
+        <label for="id">ID</label><br>
+        <input type="text" name="id" required><br>
+        <label for="name">Nume</label><br>
+        <input type="text" name="nume" required><br>
+        <label for="continut">Continut</label><br>
+        <textarea rows="4" cols="50" name="continut" required></textarea><br>
+        <label for="dates">Data</label><br>
+        <input type="datetime" name="dates" required><br>
+        <input type="submit" name="adauga" value="Adauga un anunt">
+        <input type="submit" name="modifica" value="Modifica un anunt"> 
+        <input type="submit" name="sterge" value="Sterge un anunt"> 
+    </form>
+</div>
+<?php  } ?>
+<?php include('conectare.php'); if($conectare) {
+    $q="SELECT * FROM anunturi";
+    $r=mysqli_query($conectare,$q);
+    if(mysqli_num_rows($r)>0){
+        while($row=mysqli_fetch_array($r)) {
+            ?>
+            <ul>
+                <li style="list-style-type: none;"><?php echo $row['nume']; ?></li>
+                <li style="list-style-type: none;"><?php echo $row['continut']; ?></li>
+                <li style="list-style-type: none;"><?php echo $row['dates']; ?></li>
+            </ul>
+
+            <?php
+        }
+    }
+} else {
+    echo "Selectare nereusita";
+}
+    ?>  
+</body>
+</html>

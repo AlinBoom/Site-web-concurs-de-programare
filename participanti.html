@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Concurs de Programare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Concurs de Programare</h1>
+    <div class="atention">
+        <?php session_start(); if(isset($_SESSION['user'])) { echo '<p>Esti conectat '.$_SESSION['user'].'!</p>|<a href="logout.php">Logout</a>'; } else { echo '<p><a href="login.php" style="color: red;">Conecteaza-te!</a></p>'; } ?>
+        </div>
+<div class="menu">
+    <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="regulament.html">Regulament</a></li>
+    <li><a href="organizatori.html">Organizatori</a></li>
+    <li><a href="noutati.html">Noutati</a></li>
+    <li><a href="participanti.html">Participanti</a></li>
+    <li><a href="rezultate.html">Rezultate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<?php  if(isset($_SESSION['user'])) { ?>
+<div class="continut">
+<form action="action_participanti.php" method="POST" class="form2">
+    <label for="id">id:</label>
+    <input type="text" name="id" required><br>
+    <label for="name">Nume:</label>
+    <input type="text" name="nume" required><br>
+    <label for="prenume">Prenume:</label>
+    <input type="text" name="prenume" required><br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" required><br>
+    <label for="varsta">Varsta:</label>
+    <input type="text" name="varsta" required><br>
+    <label for="clasa">Clasa:</label>
+    <input type="text" name="clasa" required><br>
+    <input type="submit" name="add" value="Adauga Participant">
+    <input type="submit" name="sterge" value="Sterge Participant">
+    <input type="submit" name="modifica" value="Modifica Participant">
+</form>
+</div>
+<?php } ?>
+<div class="result1">
+    <table style="width:100%" border="1">
+        <tr>    
+          <th>ID</th>        
+          <th>Nume</th>
+          <th>Prenume</th>
+          <th>Email</th>
+          <th>Varsta</th>
+          <th>Clasa</th>
+        </tr>
+        <?php $conectare=mysqli_connect("localhost","root","","concurs");
+        if($conectare) {
+        $q="SELECT * FROM participanti";
+        $r=mysqli_query($conectare,$q);
+        if(mysqli_num_rows($r)>0){
+            while($row=mysqli_fetch_array($r)) {
+                ?>
+                <tr>
+                    <th><?php echo $row['id']; ?></th>
+                    <th><?php echo $row['nume']; ?></th>
+                    <th><?php echo $row['prenume']; ?></th>
+                    <th><?php echo $row['email']; ?></th>
+                    <th><?php echo $row['varsta']; ?></th>
+                    <th><?php echo $row['clasa']; ?></th>
+                </tr>
+
+                <?php
+            }
+        }
+    } else {
+        echo "Selectare nereusita";
+    }
+        ?>
+      </table>
+</div>
+</body>
+</html>

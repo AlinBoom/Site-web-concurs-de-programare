@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Concurs de Programare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Concurs de Programare</h1>
+    <div class="atention">
+        <?php session_start(); if(isset($_SESSION['user'])) { echo '<p>Esti conectat '.$_SESSION['user'].'!</p>|<a href="logout.php">Logout</a>'; } else { echo '<p><a href="login.php" style="color: red;">Conecteaza-te!</a></p>'; } ?>
+  </div>
+<div class="menu">
+    <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="regulament.html">Regulament</a></li>
+    <li><a href="organizatori.html">Organizatori</a></li>
+    <li><a href="noutati.html">Noutati</a></li>
+    <li><a href="participanti.html">Participanti</a></li>
+    <li><a href="rezultate.html">Rezultate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<div class="content">
+    <h1>Regulament</h1>
+    <strong>Prin participarea la acest concurs, participantii sunt de acord sa se conformeze acestui
+        regulament. Organizatorul isi rezerva dreptul de a modifica si actualiza acest regulament ori de
+        cate ori este necesar in functie de desfasurarea campaniei.</strong>
+    <h2>Anexa 1:</h2>
+    <p>Concursul vizeaza crearea si finalizarea unui proiect in orice tehnologie abordand lucrul in
+        echipa prin:</p>
+        <ul>
+            <li>Integrarea tehnicilor de programare in realizarea proiectului;</li>
+            <li>Conectarea elevilor la domeniul programarii;</li>
+            <li>Stimularea dezvoltarii creativitatii in domeniul IT&C.</li>
+        </ul>
+    <h2>Criterii de Evaluare si notare concurs:</h2>
+    <h3>1.Organizarea/Specificatii(20 puncte)</h3>
+    <p>Nivelul de performanta:</p>
+    <ul>
+
+        <li>Ideile proiectului sunt aranjate aleatoriu, fara un parcurs clar. Intelegere
+            minima a proiectului. (5p)</li>
+        <li>Proiectul are un focus, insa este greu de urmarit. Doar o parte a lui poate
+            fi inteleasa. (10p)</li>
+        <li>Proiectul este bine organizat. O idee poate parea neterminata, insa acest
+            lucru nu afecteaza progresul proiectului in ansamblu. Programul
+            functioneaza si produce rezultatele corecte, afisate corespunzator. (15p)</li>
+        <li>Proiectul este foarte bine organizat. O idee urmeaza o alta idee, intr-o
+            succesiune logica. Programul functioneaza conform asteptarilor.(20p)</li>
+        
+    </ul>
+    <h3>2.Codul proiectului(20 de puncte)</h3>
+    <p>Nivelul de performanta:</p>
+    <ul>
+        <li>Codul proiectului nu demonstreaza intelegerea si folosirea corecta a
+            conceptelor de programare. (5p)</li>
+        <li>Codul proiectului demonstreaza o intelegere de baza a conceptelor de
+            programare. Proiectul este incomplet sau neterminat. (10p)</li>
+        <li>Codul folosit arata o intelegere buna a conceptelor de programare. Sunt
+            prezente cateva probleme ce trebuie corectate dar proiectul este in mare
+            complet(15p)</li>
+        <li>Proiectul este bine organizat, demonstrand o intelegere excelenta a
+            modului in care se programeaza (20p)</li>
+    </ul>
+    <h3>3.Documentatia proiectului(20 de puncte)</h3>
+    <p>Nivelul de performanta:</p>
+    <ul>
+        <li>Documentatia este neorganizata si incompleta.(5p)</li>
+        <li>Documentatia ar fi putut fi mai bine organizata. Continut lipsa sau nu
+            foarte bine conturat.(10p)</li>
+        <li>Documentatia este bine organizata insa incompleta. Ideile ar fi putut fi
+            mai bine conturate.(15p)</li>
+        <li>Descrie foarte clar scenariul proiectului, modul in care a fost construit;
+            documentatia prezinta detalii privind executia si provocarile intalnite.
+            (20p)</li>
+    </ul>
+    <h3>4.Creativitatea echipei(20 de puncte)</h3>
+    <ul>
+        <li>Continutul nu este coerent, nu este clar. Demonstratia are erori. Nivel de
+            creativitate redus.(5p)</li>
+        <li>Prezentarea ar fi putut fi mai bine organizata. Idei lipsa sau exprimate
+            neclar. Demonstratia are cateva erori.(10p)</li>
+        <li>Prezentarea arata o organizare buna insa fara prea multe detalii. Ideile ar
+            fi putut fi mai bine conturate. Demonstratia are cateva erori.(15p)</li>
+        <li>Prezentarea este bine organizata cu multe detalii. Proiectul este clar, bine
+            realizat si fara erori. Proiectul imbina in mod creativ conceptele de
+            programare in ideea, tema aleasa.(20p)</li>
+    </ul>
+    <h3>Impresia finala asupra proiectului(20 de puncte)</h3>
+    <ul>
+        <li>Proiectul mai necesita imbunatatiri.(5p)</li>
+        <li>Participantii au dat dovada de spirit de echipa, chiar daca proiect nu a
+            fost foarte complex.(10p)</li>
+        <li>Abordarea este unica si interesanta, iar proiectul este inovativ.(15p)</li>
+        <li>Proiectul este unul de succes.(20p)</li>
+    </ul>
+    <h2>ANGAJAMENTE, CONFIDENTIALITATEA DATELOR:</h2>
+    <p>Prin comunicarea datelor personale in modalitatile indicate in mod expres prin Regulament,
+        participantii prezentului concurs isi exprima acordul expres si neechivoc ca datele lor personale
+        sa intre in baza de date a Organizatorului in vederea efectuarii deliberarii, validarii, atribuirii
+        premiului, pentru indeplinirea obliatiilor fiscale ale organizatorului concursului.
+        Participantii la concurs, in calitate de persoane vizate, au conform Regulamentului GDPR EU
+        2016/679 urmatoarele drepturi:</p>
+        <ul>
+            <li>a)dreptul de a solicita acces la datele cu caracter personal (cunoscuta drept "solicitarea de acces
+                a persoanei vizate"). Acest lucru permite persoanei vizate sa primeasca o copie a datelor cu
+                caracter personal pe care Organizatorul le detine si sa verifice daca acestea sunt prelucrate in
+                mod legal.</li>
+            <li>b)dreptul de a solicita rectificarea datelor cu caracter personal pe care Organizatorul le detine
+                cu privire la persoana vizata. Acest permite rectificarea oricaror informatii incomplete sau inexacte pe care Organizatorul le-ar putea detine.</li>
+                dreptul de a solicita stergerea datelor cu caracter personal. Acest lucru permite persoanei vizate sa primeasca o copie a datelor cu
+                caracter personal pe care Organizatorul le detine si sa verifice daca acestea sunt prelucrate in
+                mod legal.</li>
+                <li>c)dreptul de a solicita rectificarea datelor cu caracter personal pe care Organizatorul le detine
+                    cu privire la persoana vizata. Acest permite rectificarea oricaror informatii incomplete sau inexacte pe care Organizatorul le-ar putea detine.</li>
+                <li>d)dreptul de a solicita stergerea datelor cu caracter personal. Acest lucru permite persoanei
+                    vizate sa solicite stergerea sau eliminarea datelor cu caracter personal in cazul in care
+                    Organizatorul nu detine un motiv intemeiat pentru care sa continue prelucrarea acestora.
+                    (d) dreptul de a se opune prelucrarii datelor cu caracter personal in cazul in care persoana vizata
+                    invoca un interes legitim (sau un interes legitim al unui tert).</li>
+        </ul>
+</div>
+<div class="footer">
+    <h5>Website by Alin</h5>
+</div>
+</body>
+</html>

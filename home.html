@@ -1,0 +1,28 @@
+<?php
+
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Concurs de Programare</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1 style="text-align: center;">Concurs de Programare</h1>
+    <div class="atention">
+<?php session_start(); if(isset($_SESSION['user'])) { echo '<p>Esti conectat '.$_SESSION['user'].'!</p>|<a href="logout.php">Logout</a>'; } else { echo '<p><a href="login.php" style="color: red;">Conecteaza-te!</a></p>'; } ?>
+</div>
+<div class="menu">
+    <ul>
+    <li><a href="home.html">Home</a></li>
+    <li><a href="regulament.html">Regulament</a></li>
+    <li><a href="organizatori.html">Organizatori</a></li>
+    <li><a href="noutati.html">Noutati</a></li>
+    <li><a href="participanti.html">Participanti</a></li>
+    <li><a href="rezultate.html">Rezultate</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    </ul>
+</div>
+<?php if(isset($_SESSION['user'])) { echo '<p>Bine ai venit utilizator '.$_SESSION['user'].'</p>'; }  ?>
+</body>
+</html>
